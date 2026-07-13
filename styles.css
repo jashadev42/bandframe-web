@@ -98,17 +98,6 @@ nav {
   text-align: center;
   overflow: hidden;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -300px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 620px;
-  background: radial-gradient(ellipse at center, rgba(61, 255, 166, 0.10) 0%, transparent 65%);
-  pointer-events: none;
-}
 .hero-icon {
   width: 88px;
   height: 88px;
