@@ -215,7 +215,7 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
 }
 .phone {
   width: 250px;
-  aspect-ratio: 9 / 19.2;
+  aspect-ratio: 1260 / 2736;
   border-radius: 34px;
   border: 1px solid var(--hairline2);
   background: var(--surface);
@@ -233,9 +233,9 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
   justify-content: center;
   gap: 10px;
   text-align: center;
-  padding: 20px;
+  padding: 0;
 }
-.phone-screen img { width: 100%; height: 100%; object-fit: cover; border-radius: 26px; }
+.phone-screen img { width: 100%; height: 100%; object-fit: contain; border-radius: 26px; }
 .phone-screen .ph-label { color: var(--ink); font-weight: 700; font-size: 15px; }
 .phone-screen .ph-sub { color: var(--ink4); font-size: 11px; }
 .ph-1 { background: linear-gradient(160deg, rgba(61,255,166,0.16), rgba(61,255,166,0.03) 60%), var(--surface2); }
