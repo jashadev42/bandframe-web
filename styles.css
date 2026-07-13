@@ -187,13 +187,22 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
   font-size: 21px;
   border: 1px solid;
 }
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .card h3 { color: var(--ink); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
 .card p { color: var(--ink3); font-size: 14px; line-height: 1.6; }
-.tint-neon  { background: rgba(61,255,166,0.12);  border-color: rgba(61,255,166,0.3) !important; }
-.tint-pink  { background: rgba(236,72,153,0.12);  border-color: rgba(236,72,153,0.3) !important; }
-.tint-amber { background: rgba(245,158,11,0.12);  border-color: rgba(245,158,11,0.3) !important; }
-.tint-blue  { background: rgba(129,140,248,0.12); border-color: rgba(129,140,248,0.3) !important; }
-.tint-red   { background: rgba(244,63,94,0.12);   border-color: rgba(244,63,94,0.3) !important; }
+.tint-neon  { background: rgba(61,255,166,0.12);  border-color: rgba(61,255,166,0.3) !important;  color: #3dffa6; }
+.tint-pink  { background: rgba(236,72,153,0.12);  border-color: rgba(236,72,153,0.3) !important;  color: #ec4899; }
+.tint-amber { background: rgba(245,158,11,0.12);  border-color: rgba(245,158,11,0.3) !important;  color: #f59e0b; }
+.tint-blue  { background: rgba(129,140,248,0.12); border-color: rgba(129,140,248,0.3) !important; color: #818cf8; }
+.tint-red   { background: rgba(244,63,94,0.12);   border-color: rgba(244,63,94,0.3) !important;   color: #f43f5e; }
 
 /* ---------- Screenshots ---------- */
 .shots {
