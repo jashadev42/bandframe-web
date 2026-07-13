@@ -3,145 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BandFrame — Privacy Policy</title>
-  <style>
-    :root {
-      --bg: #0A0B0D;
-      --surface: #121317;
-      --ink: #F2F3F5;
-      --ink2: rgba(242,243,245,0.72);
-      --ink3: rgba(242,243,245,0.46);
-      --neon: #3DFFA6;
-      --hairline: rgba(255,255,255,0.10);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink2);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-      font-size: 16px;
-    }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
-    h1 { color: var(--ink); font-size: 32px; letter-spacing: -0.5px; margin: 0 0 4px; }
-    h2 { color: var(--ink); font-size: 22px; letter-spacing: -0.3px; margin: 44px 0 12px; }
-    h3 { color: var(--ink); font-size: 17px; margin: 24px 0 8px; }
-    p, li { color: var(--ink2); }
-    strong { color: var(--ink); font-weight: 600; }
-    a { color: var(--neon); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .meta { color: var(--ink3); font-size: 14px; margin: 0 0 8px; }
-    hr { border: none; border-top: 1px solid var(--hairline); margin: 36px 0; }
-    ul { padding-left: 22px; }
-    li { margin: 6px 0; }
-    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
-    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); }
-    th { color: var(--ink); font-weight: 600; }
-    .footer { color: var(--ink3); font-size: 13px; font-style: italic; margin-top: 40px; }
-  </style>
+  <title>BandFrame — Write, record, and build songs with your band</title>
+  <meta name="description" content="BandFrame is a songwriting studio in your pocket: write guitar tabs, record takes, arrange them in a multi-track mixer, and collaborate with your band." />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta property="og:title" content="BandFrame — Write, record, and build songs with your band" />
+  <meta property="og:description" content="A songwriting studio in your pocket: tabs, recording, a multi-track mixer, and band collaboration." />
+  <meta property="og:image" content="/assets/icon.png" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Privacy Policy</h1>
-    <p class="meta"><strong>BandFrame</strong></p>
-    <p class="meta">Last updated: July 11, 2026</p>
-    <hr />
 
-    <h2>1. Introduction</h2>
-    <p>BandFrame ("we", "our", or "us") is a music creation and collaboration app. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
-    <p>By using BandFrame, you agree to the collection and use of information described in this policy.</p>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="/">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+        <a class="nav-cta" href="#download">Get the App</a>
+      </div>
+    </div>
+  </nav>
 
-    <h2>2. Information We Collect</h2>
-    <h3>Account Information</h3>
-    <ul>
-      <li><strong>Email address</strong> — used to create and authenticate your account. Your email is used only for sign-in and account management and is <strong>not</strong> shown to other users.</li>
-      <li><strong>Display name</strong> — your name shown to collaborators on projects you share</li>
-      <li><strong>Username</strong> — your unique @handle, shown on your profile and to your collaborators</li>
-      <li><strong>Profile photo</strong> — an optional photo you choose to upload. If you set one, we access only the photo you select from your photo library — never your other photos.</li>
-      <li><strong>Bio and instruments</strong> — optional details you add to your profile</li>
-    </ul>
-    <h3>Content You Create</h3>
-    <ul>
-      <li><strong>Guitar, bass, and ukulele tabs</strong> — the musical notation you write in the app</li>
-      <li><strong>Song sections, lyrics, and project settings</strong> — all project data you create</li>
-      <li><strong>Audio recordings</strong> — vocal and instrument takes you record through the app</li>
-      <li><strong>Imported audio files</strong> — files you import from your device into the Audio Library</li>
-      <li><strong>Mixer arrangements</strong> — how you arrange your recordings in the Studio Mixer</li>
-    </ul>
-    <p>We do not use third-party analytics or advertising trackers. We do not currently use a third-party crash-reporting service; if we add one in the future, we will update this policy first.</p>
-    <h3>Device Information</h3>
-    <p>We do not collect your location, contacts, or any data from other apps. Standard technical information (such as device type and OS version) may be handled by Apple as part of App Store distribution, under Apple's own privacy terms.</p>
+  <header class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="/assets/icon.png" alt="BandFrame app icon" />
+      <h1>Your band's songs,<br /><span class="accent">from idea to demo.</span></h1>
+      <p class="sub">
+        Write tabs, record takes, arrange them in a multi-track mixer, and bring
+        your bandmates into the project — all from your phone.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" id="download" href="#" aria-disabled="true">
+           Coming soon to the App Store
+        </a>
+        <a class="btn-secondary" href="#features">See what's inside</a>
+      </div>
+      <p class="hero-note">Free to start · No ads, ever</p>
+    </div>
+  </header>
 
-    <h2>3. How We Use Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Create and maintain your account</li>
-      <li>Provide the core features of the app (tab writing, recording, the Studio Mixer)</li>
-      <li>Enable project collaboration — sharing a project with other users via an invite link, and related in-app notifications</li>
-      <li>Respond to support requests</li>
-    </ul>
-    <p>We do <strong>not</strong> use your data for advertising. We do <strong>not</strong> sell your data to third parties.</p>
+  <section>
+    <div class="wrap">
+      <div class="shots">
+        <!-- PLACEHOLDER SCREENSHOTS — replace .phone-screen contents with <img src="/assets/shot-1.png" /> etc. -->
+        <div class="phone">
+          <div class="phone-screen ph-1">
+            <span class="ph-label">TAB Editor</span>
+            <span class="ph-sub">screenshot coming soon</span>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-screen ph-2">
+            <span class="ph-label">Studio Mixer</span>
+            <span class="ph-sub">screenshot coming soon</span>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-screen ph-3">
+            <span class="ph-label">Band Projects</span>
+            <span class="ph-sub">screenshot coming soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>4. How We Share Your Information</h2>
-    <h3>With Other Users</h3>
-    <p>When you invite someone to collaborate on a project, the other members of that project can see:</p>
-    <ul>
-      <li>Your display name and username</li>
-      <li>Your profile photo, bio, and listed instruments</li>
-      <li>Content you contribute to that shared project (tabs, recordings)</li>
-    </ul>
-    <p>You control who has access to a project through its invite link and can remove members or set them to view-only. Your <strong>email address is never visible to other users</strong> — it is not part of your profile.</p>
-    <h3>With Service Providers</h3>
-    <p>We use the following third-party services to operate the app:</p>
-    <table>
-      <thead><tr><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr></thead>
-      <tbody>
-        <tr><td>Supabase</td><td>Database, authentication, and file storage</td><td><a href="https://supabase.com/privacy">supabase.com/privacy</a></td></tr>
-        <tr><td>Apple (App Store)</td><td>App distribution</td><td><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td></tr>
-      </tbody>
-    </table>
-    <p>These providers process your data only to provide their services and are contractually bound to protect it. If we add additional providers (for example, a subscription-management or crash-reporting service), we will update this list before doing so.</p>
-    <h3>Legal Requirements</h3>
-    <p>We may disclose your information if required to do so by law or in response to a valid legal request.</p>
+  <section id="features">
+    <div class="wrap">
+      <div class="section-label"><span class="mono">Features</span></div>
+      <h2 class="section-title">A full songwriting studio in your pocket</h2>
+      <p class="section-sub">
+        BandFrame replaces the pile of voice memos, notes-app lyrics, and half-remembered
+        riffs with one place your whole band can work from.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon tint-neon">🎸</div>
+          <h3>Write real tabs</h3>
+          <p>A fast, touch-first TAB editor for guitar, bass, and ukulele — with per-bar subdivisions, repeats, alternate tunings, and playback that plays your tab back at tempo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-pink">🎤</div>
+          <h3>Record every idea</h3>
+          <p>Capture vocal, guitar, piano, bass, and uke takes right in the app with count-in and metronome. Star your favorites and add notes so the good take never gets lost.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-blue">🎚️</div>
+          <h3>Arrange in the Studio Mixer</h3>
+          <p>Drag your takes onto a multi-track timeline. Per-track volume, mute, and solo. Record new layers while the timeline plays — build a demo without leaving your phone.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-amber">👥</div>
+          <h3>Built for bands</h3>
+          <p>Invite your bandmates to a project with a link. Everyone can add parts, hear the latest takes, and stay in sync — with per-member edit or view-only access.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-neon">🎼</div>
+          <h3>Fretboard &amp; chord tools</h3>
+          <p>Plot shapes on an interactive fretboard with automatic chord detection, strum and arpeggio preview, plus a built-in tuner and metronome.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-red">☁️</div>
+          <h3>Everywhere you are</h3>
+          <p>Your projects live in the cloud. Pro backs up every recording automatically, exports full-score PDFs of your songs, and keeps playing when your phone is locked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>5. Data Storage and Security</h2>
-    <p>Your data is stored on Supabase infrastructure. Your tabs, projects, and profile data are protected by per-user access rules enforced at the database level, so other users can only access content in projects you have shared with them.</p>
-    <p>Audio recordings and imported files are stored in cloud storage associated with your account and are retrieved through links used by the app. Within a shared project, the people you collaborate with can access the recordings in that project. Because these links are used to stream audio across devices and to your collaborators, treat a project you share as visible to everyone you share it with. All data in transit is protected with industry-standard HTTPS encryption.</p>
-    <p>Passwords are never stored by us — authentication is handled by Supabase Auth using secure hashing.</p>
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-label" style="text-align:center"><span class="mono">Pricing</span></div>
+      <h2 class="section-title" style="text-align:center">Start free. Go Pro when you're ready.</h2>
+      <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">
+        Unlimited projects and instruments on every plan.
+      </p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Free</h3>
+          <div class="price-line"><span class="amount">$0</span></div>
+          <p class="price-free-sub">Everything you need to start writing</p>
+          <ul>
+            <li>Unlimited projects &amp; instruments</li>
+            <li>Full TAB editor &amp; playback</li>
+            <li>Studio Mixer</li>
+            <li>Band collaboration</li>
+            <li>40 recordings</li>
+            <li>5 audio library imports</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <span class="badge">7-day free trial</span>
+          <h3>BandFrame Pro</h3>
+          <div class="price-line"><span class="amount">$3.99</span><span class="period">/month</span></div>
+          <p class="price-alt">or $24.99/year — save 48%</p>
+          <ul>
+            <li>Everything in Free</li>
+            <li>Unlimited recordings</li>
+            <li>Unlimited library imports</li>
+            <li>Cloud backup of every take</li>
+            <li>Background &amp; lock-screen playback</li>
+            <li>Full-score PDF export</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pricing-note">
+        Subscriptions auto-renew until cancelled and are billed through your app store account.
+      </p>
+    </div>
+  </section>
 
-    <h2>6. Data Retention and Deletion</h2>
-    <p>We retain your data for as long as your account is active. You can permanently delete your account and all associated data <strong>at any time from within the app</strong> (Profile → Delete Account), or by emailing us at the address below. When you delete your account, we permanently remove:</p>
-    <ul>
-      <li>Your profile and account information</li>
-      <li>All projects, sections, tabs, and notes you created</li>
-      <li>All audio recordings and library files you own</li>
-      <li>Your project memberships, invite links, and notifications</li>
-    </ul>
-    <p>This deletion is permanent and cannot be undone, except where we are required to retain certain information by law.</p>
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next song starts here.</h2>
+        <p>BandFrame is coming soon to the App Store.</p>
+        <a class="btn-primary" href="/support/">Get notified at launch</a>
+      </div>
+    </div>
+  </section>
 
-    <h2>7. Your Rights</h2>
-    <p>You have the right to:</p>
-    <ul>
-      <li><strong>Access</strong> — request a copy of the data we hold about you</li>
-      <li><strong>Correction</strong> — update your display name, profile photo, bio, and instruments at any time in the app</li>
-      <li><strong>Deletion</strong> — delete your account and all associated data from within the app (Profile → Delete Account)</li>
-      <li><strong>Portability</strong> — request an export of your data by contacting us</li>
-    </ul>
-    <p>If you are located in the European Economic Area or the United Kingdom, you additionally have the rights provided by the GDPR, including the right to object to processing and to lodge a complaint with your local supervisory authority. If you are a California resident, you have the rights provided by the CCPA, including the right to know what personal information we collect and the right to deletion. We do not sell personal information as defined by the CCPA. To exercise any of these rights, contact us at the email below.</p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </div>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/support/">Support</a>
+        <a href="mailto:bandframeapp@gmail.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 BandFrame · Made for musicians</div>
+    </div>
+  </footer>
 
-    <h2>8. Children's Privacy</h2>
-    <p>BandFrame is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it.</p>
-
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-
-    <h2>10. Contact Us</h2>
-    <p>If you have questions about this Privacy Policy or want to exercise your data rights, contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:bandframeapp@gmail.com">bandframeapp@gmail.com</a></p>
-
-    <hr />
-    <p class="footer">This privacy policy was last reviewed on July 11, 2026.</p>
-  </div>
 </body>
 </html>
