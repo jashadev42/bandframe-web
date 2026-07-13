@@ -215,7 +215,7 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
 }
 .phone {
   width: 250px;
-  aspect-ratio: 1260 / 2736;
+  aspect-ratio: 1260 / 2600;
   border-radius: 34px;
   border: 1px solid var(--hairline2);
   background: var(--surface);
