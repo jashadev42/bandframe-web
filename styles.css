@@ -99,11 +99,10 @@ nav {
   overflow: hidden;
 }
 .hero-icon {
-  width: 88px;
-  height: 88px;
-  border-radius: 22px;
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
   margin-bottom: 28px;
-  box-shadow: 0 8px 44px rgba(61, 255, 166, 0.25);
 }
 .hero h1 {
   color: var(--ink);
@@ -366,7 +365,7 @@ footer {
   padding: 32px;
   margin: 20px 0;
 }
-.support-card h3 { color: var(--ink); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.support-card h3 { color: var(--ink); font-size: 18px; font-weight: 700; margin-top: 0; margin-bottom: 8px; }
 .support-card p { color: var(--ink3); font-size: 15px; }
 
 @media (max-width: 640px) {
