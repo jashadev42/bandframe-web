@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email confirmed — BandFrame</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .auth-check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--neon-soft); border: 1px solid var(--neon-glow);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+    }
+    .auth-check svg { width: 30px; height: 30px; stroke: var(--neon); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .auth-card { text-align: center; }
+    .auth-card h1 { color: var(--ink); font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .auth-card p { color: var(--ink3); font-size: 15.5px; line-height: 1.6; max-width: 420px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="/">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </a>
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+        <a class="nav-cta" href="/#download">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap-narrow">
+    <main class="legal">
+      <div class="support-card auth-card" id="success" style="padding: 48px 32px;">
+        <div class="auth-check">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+        </div>
+        <h1>Email confirmed</h1>
+        <p>Your BandFrame account is verified and ready. Head back to the app and sign in — your band is waiting.</p>
+      </div>
+
+      <div class="support-card auth-card" id="failure" style="padding: 48px 32px; display: none;">
+        <h1>This link didn't work</h1>
+        <p id="failure-msg">The confirmation link is invalid or has expired. Open BandFrame and sign in to request a fresh one, or email
+        <a href="mailto:bandframeapp@gmail.com"><strong>bandframeapp@gmail.com</strong></a> and we'll sort it out.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </div>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/support/">Support</a>
+        <a href="mailto:bandframeapp@gmail.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 BandFrame · Made for musicians</div>
+    </div>
+  </footer>
+
+  <script>
+    // Supabase reports problems (expired/used links) in the URL hash —
+    // e.g. #error=access_denied&error_code=otp_expired&error_description=...
+    (function () {
+      var hash = new URLSearchParams(window.location.hash.slice(1));
+      if (hash.get('error')) {
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('failure').style.display = 'block';
+        var desc = hash.get('error_description');
+        if (desc) {
+          document.getElementById('failure-msg').innerHTML =
+            desc.replace(/\+/g, ' ') +
+            '. Open BandFrame and sign in to request a fresh link, or email <a href="mailto:bandframeapp@gmail.com"><strong>bandframeapp@gmail.com</strong></a>.';
+        }
+      }
+    })();
+  </script>
+
+</body>
+</html>

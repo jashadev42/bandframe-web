@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset password — BandFrame</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .auth-card { max-width: 460px; margin: 0 auto; }
+    .auth-card h1 { color: var(--ink); font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .auth-card .lead { color: var(--ink3); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+    .auth-field { margin-bottom: 16px; }
+    .auth-field label {
+      display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 7px;
+    }
+    .auth-field input {
+      width: 100%; padding: 13px 14px; font-size: 16px; color: var(--ink);
+      background: var(--surface2, rgba(255,255,255,0.04)); border: 1px solid var(--hairline);
+      border-radius: 12px; outline: none; font-family: 'Inter', sans-serif;
+    }
+    .auth-field input:focus { border-color: var(--neon-glow); }
+    .auth-btn {
+      width: 100%; padding: 14px; margin-top: 6px; font-size: 15px; font-weight: 700;
+      color: #062018; background: var(--neon); border: none; border-radius: 12px;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+    }
+    .auth-btn:disabled { opacity: 0.55; cursor: default; }
+    .auth-msg { margin-top: 14px; font-size: 14px; line-height: 1.5; display: none; }
+    .auth-msg.error { color: #ff7d92; display: block; }
+    .auth-msg.ok { color: var(--neon); display: block; }
+    .auth-state p { color: var(--ink3); font-size: 15.5px; line-height: 1.6; }
+    .auth-check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--neon-soft); border: 1px solid var(--neon-glow);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+    }
+    .auth-check svg { width: 30px; height: 30px; stroke: var(--neon); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="/">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </a>
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/support/">Support</a>
+        <a class="nav-cta" href="/#download">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap-narrow">
+    <main class="legal">
+      <div class="support-card auth-card" style="padding: 40px 32px;">
+
+        <!-- Checking the link -->
+        <div class="auth-state" id="state-loading">
+          <h1>Reset your password</h1>
+          <p>Checking your reset link…</p>
+        </div>
+
+        <!-- Link valid: show the form -->
+        <div class="auth-state" id="state-form" style="display: none;">
+          <h1>Reset your password</h1>
+          <p class="lead">Choose a new password for your BandFrame account.</p>
+          <form id="reset-form">
+            <div class="auth-field">
+              <label for="password">New password</label>
+              <input type="password" id="password" autocomplete="new-password" minlength="6" required />
+            </div>
+            <div class="auth-field">
+              <label for="confirm">Confirm password</label>
+              <input type="password" id="confirm" autocomplete="new-password" minlength="6" required />
+            </div>
+            <button type="submit" class="auth-btn" id="submit-btn">Update password</button>
+            <p class="auth-msg" id="form-msg"></p>
+          </form>
+        </div>
+
+        <!-- Password changed -->
+        <div class="auth-state" id="state-done" style="display: none; text-align: center;">
+          <div class="auth-check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+          </div>
+          <h1>Password updated</h1>
+          <p>You're all set. Open BandFrame and sign in with your new password.</p>
+        </div>
+
+        <!-- Link invalid or expired -->
+        <div class="auth-state" id="state-error" style="display: none;">
+          <h1>This link didn't work</h1>
+          <p id="error-msg">The reset link is invalid or has expired. Open BandFrame, tap <strong>Forgot password</strong> again, and use the newest email — or contact
+          <a href="mailto:bandframeapp@gmail.com"><strong>bandframeapp@gmail.com</strong></a>.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/favicon.png" alt="" />
+        BandFrame
+      </div>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/support/">Support</a>
+        <a href="mailto:bandframeapp@gmail.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 BandFrame · Made for musicians</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    // The anon key is public by design (it also ships inside the app bundle);
+    // Row Level Security is what protects the data.
+    var SUPABASE_URL = 'https://svdmwijzumjyyrefbxrq.supabase.co';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2ZG13aWp6dW1qeXlyZWZieHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3Mjc5OTksImV4cCI6MjA5MzMwMzk5OX0.vs1kBujZEJCfGRnbKeIoP5jGKfWEilubd8e4H7owRgU';
+
+    var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    function show(stateId) {
+      ['state-loading', 'state-form', 'state-done', 'state-error'].forEach(function (id) {
+        document.getElementById(id).style.display = id === stateId ? 'block' : 'none';
+      });
+    }
+
+    function showLinkError(desc) {
+      if (desc) {
+        document.getElementById('error-msg').innerHTML =
+          desc.replace(/\+/g, ' ') +
+          '. Open BandFrame, tap <strong>Forgot password</strong> again, and use the newest email — or contact <a href="mailto:bandframeapp@gmail.com"><strong>bandframeapp@gmail.com</strong></a>.';
+      }
+      show('state-error');
+    }
+
+    // ── 1. Validate the link ──────────────────────────────────────────────
+    // Supabase redirects here with tokens (or an error) in the URL hash.
+    // supabase-js parses the tokens automatically and creates a session.
+    (function init() {
+      var hash = new URLSearchParams(window.location.hash.slice(1));
+      if (hash.get('error')) { showLinkError(hash.get('error_description')); return; }
+
+      var settled = false;
+      function ready() { if (!settled) { settled = true; show('state-form'); } }
+
+      client.auth.getSession().then(function (res) {
+        if (res.data.session) ready();
+      });
+      client.auth.onAuthStateChange(function (_event, session) {
+        if (session) ready();
+      });
+      // If no session materializes, the link was bad (opened without tokens,
+      // already used, or expired).
+      setTimeout(function () { if (!settled) { settled = true; showLinkError(null); } }, 4000);
+    })();
+
+    // ── 2. Set the new password ───────────────────────────────────────────
+    document.getElementById('reset-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = document.getElementById('form-msg');
+      var btn = document.getElementById('submit-btn');
+      var password = document.getElementById('password').value;
+      var confirm = document.getElementById('confirm').value;
+
+      msg.className = 'auth-msg';
+      if (password.length < 6) { msg.textContent = 'Password must be at least 6 characters.'; msg.className = 'auth-msg error'; return; }
+      if (password !== confirm) { msg.textContent = "Passwords don't match."; msg.className = 'auth-msg error'; return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Updating…';
+      client.auth.updateUser({ password: password }).then(function (res) {
+        if (res.error) {
+          var m = res.error.message || 'Something went wrong. Please try again.';
+          if (m.indexOf('should be different') !== -1) m = 'Your new password must be different from your old one.';
+          msg.textContent = m;
+          msg.className = 'auth-msg error';
+          btn.disabled = false;
+          btn.textContent = 'Update password';
+          return;
+        }
+        // Sign out this browser session — the user signs in fresh in the app.
+        client.auth.signOut();
+        show('state-done');
+      });
+    });
+  </script>
+
+</body>
+</html>
