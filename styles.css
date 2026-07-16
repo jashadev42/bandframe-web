@@ -130,7 +130,6 @@ nav {
   font-size: 15px;
   padding: 15px 28px;
   border-radius: 13px;
-  box-shadow: 0 6px 28px rgba(61, 255, 166, 0.3);
 }
 .btn-primary:hover { text-decoration: none; filter: brightness(1.08); }
 .btn-secondary {
@@ -255,7 +254,6 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
 }
 .price-card.featured {
   border-color: rgba(61, 255, 166, 0.4);
-  box-shadow: 0 0 44px rgba(61, 255, 166, 0.08);
   position: relative;
 }
 .badge {
