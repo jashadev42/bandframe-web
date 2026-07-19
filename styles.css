@@ -211,7 +211,7 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
 }
 .phone {
   width: 250px;
-  aspect-ratio: 1260 / 2600;
+  flex-shrink: 0;
   border-radius: 34px;
   border: 1px solid var(--hairline2);
   background: var(--surface);
@@ -220,18 +220,10 @@ p.section-sub { color: var(--ink3); font-size: 17px; max-width: 620px; margin-bo
 }
 .phone-screen {
   width: 100%;
-  height: 100%;
   border-radius: 26px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  padding: 0;
 }
-.phone-screen img { width: 100%; height: 100%; object-fit: contain; border-radius: 26px; }
+.phone-screen img { display: block; width: 100%; height: auto; aspect-ratio: 1260 / 2736; border-radius: 26px; }
 .phone-screen .ph-label { color: var(--ink); font-weight: 700; font-size: 15px; }
 .phone-screen .ph-sub { color: var(--ink4); font-size: 11px; }
 .ph-1 { background: linear-gradient(160deg, rgba(61,255,166,0.16), rgba(61,255,166,0.03) 60%), var(--surface2); }
