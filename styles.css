@@ -8,8 +8,8 @@
   --hairline2: rgba(255, 255, 255, 0.10);
   --ink: #F2F3F5;
   --ink2: rgba(242, 243, 245, 0.72);
-  --ink3: rgba(242, 243, 245, 0.46);
-  --ink4: rgba(242, 243, 245, 0.28);
+  --ink3: rgba(242, 243, 245, 0.60);
+  --ink4: rgba(242, 243, 245, 0.50);
   --neon: #3DFFA6;
   --neon-soft: rgba(61, 255, 166, 0.18);
   --neon-glow: rgba(61, 255, 166, 0.45);
@@ -45,6 +45,26 @@ body {
 
 a { color: var(--neon); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* ---------- Accessibility ---------- */
+.skip-link {
+  position: absolute;
+  top: -56px;
+  left: 8px;
+  z-index: 100;
+  background: var(--neon);
+  color: #062018;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 8px; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+main:focus { outline: none; }
+/* Underline links inside body copy so they're not identified by color alone */
+.legal a { text-decoration: underline; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
@@ -132,6 +152,8 @@ nav {
   border-radius: 13px;
 }
 .btn-primary:hover { text-decoration: none; filter: brightness(1.08); }
+.btn-primary.is-disabled { cursor: default; }
+.btn-primary.is-disabled:hover { filter: none; }
 .btn-secondary {
   display: inline-flex;
   align-items: center;
